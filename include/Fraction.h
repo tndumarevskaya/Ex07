@@ -1,5 +1,5 @@
 //  Copyright 2020 Dumarevskaya.
-#ifndef INCLUDE_FRACTION_H
+#ifndef INCLUDE_FRACTION_H_
 #define INCLUDE_FRACTION_H_
 
 #include <iostream>
