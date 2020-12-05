@@ -8,7 +8,7 @@ std::string Fraction::getValue() {
     str = "Error: impossible operation";
   else {
     *this = this->normalize();
-    if (denominator == 1) {
+    if (denominator == 1 || numerator == 0) {
       str = std::to_string(numerator);
     }
     else {
@@ -59,7 +59,7 @@ Fraction Fraction::operator/(const Fraction& frac) {
   try { //ищем исключения, которые выбрасываются в блоке try, и отправляем их для обработки в блок(и) catch
     if (frac.numerator == 0)
       throw 0;
-      return Fraction(numerator / frac.denominator, denominator / frac.numerator);
+      return Fraction(numerator * frac.denominator, denominator * frac.numerator);
   }
   catch (int) { // обработка исключений типа int
     denominator = 0;
