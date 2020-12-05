@@ -8,7 +8,7 @@ std::string Fraction::getValue() {
     str = "Error: impossible operation";
   else {
     *this = this->normalize();
-    if (denominator == 1 || numerator == 0) {
+    if (denominator == 1) {
       str = std::to_string(numerator);
     }
     else {
@@ -19,9 +19,11 @@ std::string Fraction::getValue() {
 };
 
 int Fraction::getNumerator() {
+  *this = this->normalize();
   return numerator;
 };
 int Fraction::getDenominator() {
+  *this = this->normalize();
   return denominator;
 };
 
@@ -79,8 +81,10 @@ Fraction& Fraction::operator=(const Fraction& frac) {
 
 Fraction Fraction::normalize() {
   int min = numerator, max = denominator;
-  if (min == 0)
+  if (min == 0) {
+    denominator = 1;
     return *this;
+  }
   while (max % min != 0) {
     int temp = min;
     min = max % min;
