@@ -52,7 +52,7 @@ Fraction Fraction::operator-(const Fraction& fr) {
 
 Fraction Fraction::operator*(const Fraction& frac) {
   return Fraction(numerator * frac.numerator, denominator * frac.denominator);
-};
+}
 
 Fraction Fraction::operator/(const Fraction& fr) {
   try {

@@ -2,14 +2,13 @@
 #include "Fraction.h"
 
 int main() {
-  Fraction a(2, 4); // 1/2
-  Fraction b(a);
+  Fraction a(1, 2);
+  Fraction b(-1, 2);
   Fraction c, d;
-  std::cout << c.getValue() << std::endl; // 0
-  d = a / c;
-  std::cout << d.getValue() << std::endl;
+  d = a * b;
+  std::cout << d.getNumerator() << std::endl << d.getDenominator() << std::endl;
   a = b;
-  c = a * b;
-  std::cout << c.getValue(); // 1
+  c = a / b;
+  std::cout << c.getValue() << std::endl;
   return 0;
 }
