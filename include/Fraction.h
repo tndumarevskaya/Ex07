@@ -1,3 +1,4 @@
+//  Copyright 2020 Dumarevskaya.
 #ifndef INCLUDE_FRACTION_H_
 #define INCKUDE_FRACTION_H_
 
