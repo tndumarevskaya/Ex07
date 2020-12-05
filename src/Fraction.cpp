@@ -3,16 +3,15 @@
 
 std::string Fraction::getValue() {
   std::string str;
-  if (denominator == 0)
-    str = "Error: impossible operation";
-  else {
-    *this = this->normalize();
-    if (denominator == 1) {
-      str = std::to_string(numerator);
-    }
-    else {
-      str = std::to_string(numerator) + "/" + std::to_string(denominator);
-    }
+  if (denominator == 0) {
+      str = "Error: impossible operation";
+  } else {
+     *this = this->normalize();
+     if (denominator == 1) {
+       str = std::to_string(numerator);
+     } else {
+       str = std::to_string(numerator) + "/" + std::to_string(denominator);
+     }
   }
   return str;
 }
@@ -31,12 +30,11 @@ Fraction Fraction::operator+(const Fraction& fr) {
   if (denominator == fr.denominator) {
     Fraction new_f(numerator + fr.numerator, denominator);
     return new_f;
-  }
-  else {
-    Fraction new_f;
-    new_f.numerator = numerator * fr.denominator + denominator * fr.numerator;
-    new_f.denominator = denominator * fr.denominator;
-    return new_f;
+  } else {
+     Fraction new_f;
+     new_f.numerator = numerator * fr.denominator + denominator * fr.numerator;
+     new_f.denominator = denominator * fr.denominator;
+     return new_f;
   }
 }
 
@@ -44,12 +42,11 @@ Fraction Fraction::operator-(const Fraction& fr) {
   if (denominator == fr.denominator) {
     Fraction new_f(numerator - fr.numerator, denominator);
     return new_f;
-  }
-  else {
-    Fraction new_f;
-    new_f.numerator = numerator * fr.denominator - denominator * fr.numerator;
-    new_f.denominator = denominator * fr.denominator;
-    return new_f;
+  } else {
+     Fraction new_f;
+     new_f.numerator = numerator * fr.denominator - denominator * fr.numerator;
+     new_f.denominator = denominator * fr.denominator;
+     return new_f;
   }
 }
 
